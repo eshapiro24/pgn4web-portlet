@@ -8,7 +8,11 @@
     PortletPreferences prefs = renderRequest.getPreferences();
     Boolean doHeader = Boolean.parseBoolean(prefs.getValue("doGameHeader", "true"));
     Boolean doText = Boolean.parseBoolean(prefs.getValue("doGameText", "false"));
-    String pgnURL = prefs.getValue("pgnURL","");
+    Boolean doCommentsInMove = Boolean.parseBoolean(prefs.getValue("doCommentsInMove", "false"));
+    Boolean doGameButtons = Boolean.parseBoolean(prefs.getValue("doGameButtons", "true"));
+    Boolean doCommentsOnSeperateLines = Boolean.parseBoolean(prefs.getValue("doCommentsOnSeperateLines", "false"));
+    Boolean doStartAutoPlay = Boolean.parseBoolean(prefs.getValue("doStartAutoPlay", "false"));
+    String pgnURL = prefs.getValue("pgnURL", "");
 %>
 
 <script type="text/javascript">
@@ -17,12 +21,13 @@
     <c:if test="<%= pgnURL!=null && pgnURL.length()>0 %>">
     SetPgnUrl("<%= pgnURL %>");
     </c:if>
+    SetCommentsIntoMoveText(<%= doCommentsInMove %>);
     SetImagePath("<%= request.getContextPath()+"/images" %>");
     SetImageType("png");
     SetGameSelectorOptions("Select a game...", false, 0, 8, 0, 0, 0, 0, 10); // (head, num, chEvent, chSite, chRound, chWhite, chBlack, chResult, chDate);
-    SetCommentsOnSeparateLines(true);
+    SetCommentsOnSeparateLines(<%= doCommentsOnSeperateLines %>);
     SetAutoplayDelay(2500); // milliseconds
-    SetAutostartAutoplay(false);
+    SetAutostartAutoplay(<%= doStartAutoPlay %>);
 </script>
 
 
@@ -137,7 +142,9 @@
     <p></p>
     <div id="GameBoard"></div>
     <p></p>
-    <div id="GameButtons"></div>
+    <c:if test="<%= doGameButtons %>">
+        <div id="GameButtons"></div>
+    </c:if>
     <p></p>
     <div id="GameSelector"></div>
     <p></p>
