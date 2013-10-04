@@ -41,6 +41,27 @@
 		</plugins>
 	</build>
 
+    <profiles>
+        <profile>
+            <id>tomcat6</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <javaxservlet.version>2.5</javaxservlet.version>
+                <javaxservletjsp.version>2.1</javaxservletjsp.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>tomcat7</id>
+            <properties>
+                <javaxservlet.version>3.0-alpha-1</javaxservlet.version>
+                <javaxservletjsp.version>2.2</javaxservletjsp.version>
+            </properties>
+        </profile>
+
+    </profiles>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
@@ -75,13 +96,13 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<version>${javaxservlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
-			<version>2.2</version>
+			<version>${javaxservletjsp.version}</version>
 			<scope>provided</scope>
 		</dependency>
         <dependency>
