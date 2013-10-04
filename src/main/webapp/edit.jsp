@@ -13,7 +13,7 @@
     Boolean doGameButtons = Boolean.parseBoolean(prefs.getValue("doGameButtons", "true"));
     Boolean doCommentsOnSeperateLines = Boolean.parseBoolean(prefs.getValue("doCommentsOnSeperateLines", "false"));
     Boolean doStartAutoPlay = Boolean.parseBoolean(prefs.getValue("doStartAutoPlay", "false"));
-    String pgnURL = prefs.getValue("pgnURL","");
+    String pgnArticleId = prefs.getValue("pgnArticleId","");
 %>
 
 <aui:form action="<%= actionURL %>" method="post">
@@ -23,6 +23,6 @@
     <aui:input label="doGameButtons" type="checkbox" name="doGameButtons" checked="<%= doGameButtons %>"/>
     <aui:input label="doCommentsOnSeperateLines" type="checkbox" name="doCommentsOnSeperateLines" checked="<%= doCommentsOnSeperateLines %>"/>
     <aui:input label="doStartAutoPlay" type="checkbox" name="doStartAutoPlay" checked="<%= doStartAutoPlay %>"/>
-    <aui:input label="pgnURL" type="input" name="pgnURL" value="<%= pgnURL %>"/>
+    <aui:input label="pgnArticleId" type="input" name="pgnArticleId" value="<%= pgnArticleId %>"/>
     <aui:button type="submit"/>
 </aui:form>

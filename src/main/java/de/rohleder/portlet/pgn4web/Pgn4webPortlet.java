@@ -6,7 +6,7 @@ import javax.portlet.*;
 import java.io.IOException;
 
 public class Pgn4webPortlet extends MVCPortlet {
-    private static String[] parameterKeys = {"doGameHeader", "doGameText", "pgnURL", "doCommentsInMove", "doGameButtons", "doCommentsOnSeperateLines",
+    private static String[] parameterKeys = {"doGameHeader", "doGameText", "pgnArticleId", "doCommentsInMove", "doGameButtons", "doCommentsOnSeperateLines",
             "doStartAutoPlay"};
 
     @Override
