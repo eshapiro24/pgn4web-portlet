@@ -8,8 +8,7 @@
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/mini.css</header-portlet-css>
 		<header-portlet-javascript>/js/pgn4web.js</header-portlet-javascript>
-		<!-- this has font problems TODO -->
-                <!-- header-portlet-javascript>/js/chess-informant-NAG-symbols.js</header-portlet-javascript -->
+        <!--<header-portlet-javascript>/js/chess-informant-NAG-symbols.js</header-portlet-javascript>-->
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

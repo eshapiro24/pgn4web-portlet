@@ -10,8 +10,10 @@
 if ((typeof(blockChessInformantNAGSymbols) != "boolean") || (!blockChessInformantNAGSymbols)) {
 
   if (typeof(ii) == "undefined") { var ii; }
+  if (typeof(FontPath) == "undefined") { var FontPath = "fonts"; }
+  if ((FontPath.length > 0) && (FontPath[FontPath.length-1] != '/')) { FontPath += '/'; }
 
-  document.write('<link href="fonts/pgn4web-font-ChessInformantReader.css" type="text/css" rel="stylesheet" />');
+  document.write('<link href="' + FontPath + 'pgn4web-font-ChessInformantReader.css" type="text/css" rel="stylesheet" />');
   document.write('<style type="text/css">.NAGs, .NAGl { font-family: "pgn4web ChessInformantReader"; line-height: 1em; }</style>');
 
   var Ns = '<span class="NAGs">';

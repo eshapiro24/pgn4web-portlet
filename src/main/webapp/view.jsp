@@ -5,6 +5,7 @@
 <%@ page import="javax.portlet.PortletPreferences" %>
 <%@ page import="com.liferay.portal.kernel.util.WebKeys" %>
 <%@ page import="com.liferay.portal.theme.ThemeDisplay" %>
+<%@ page import="com.liferay.portal.kernel.util.Validator" %>
 
 <portlet:defineObjects/>
 
@@ -19,6 +20,8 @@
     String pgnArticleId = prefs.getValue("pgnArticleId", "");
 %>
 
+<script type="text/javascript">var FontPath = "<%= request.getContextPath()+"/fonts/" %>";</script>
+<script src="<%= request.getContextPath()+"/js/chess-informant-NAG-symbols.js" %>" type="text/javascript"></script>
 <script type="text/javascript">
     "use strict";
 
@@ -34,7 +37,7 @@
 
 <form style="display: none;"><textarea style="display: none;" id="pgnText">
     <c:choose>
-        <c:when test="<%= pgnArticleId!=null && pgnArticleId.length()>0 %>">
+        <c:when test="<%= Validator.isNumber(pgnArticleId) %>">
             <liferay-ui:journal-article articleId="<%= pgnArticleId %>"
                                         groupId="<%= ((ThemeDisplay)request.getAttribute(WebKeys.THEME_DISPLAY)).getPortletGroupId() %>"
                                         showTitle="false"/>
