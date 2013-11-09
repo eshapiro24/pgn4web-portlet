@@ -17,13 +17,14 @@
         <liferay.auto.deploy.dir>/var/lib/liferay/deploy</liferay.auto.deploy.dir>
         <tomcat.deploy.dir>/home/mike/tomcat/webapps</tomcat.deploy.dir>
 
-        <liferay.version>6.1.2</liferay.version>
-        <liferay.maven.version>6.1.2</liferay.maven.version>
+        <liferay.version>6.2.0-RC5</liferay.version>
+        <liferay.maven.version>6.2.0</liferay.maven.version>
         <javaxportlet.version>2.0</javaxportlet.version>
         <jstl.version>1.2</jstl.version>
     </properties>
 
 	<build>
+        <finalName>${project.artifactId}</finalName>   <!-- install without version string, because of appliationcontext for services -->
 		<plugins>
 			<plugin>
 				<groupId>com.liferay.maven.plugins</groupId>
