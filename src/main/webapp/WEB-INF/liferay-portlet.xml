@@ -4,7 +4,6 @@
 <liferay-portlet-app>
 	<portlet>
 		<portlet-name>pgn4web</portlet-name>
-		<icon>/icon.png</icon>
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/mini.css</header-portlet-css>
 		<header-portlet-javascript>/js/pgn4web.js</header-portlet-javascript>
